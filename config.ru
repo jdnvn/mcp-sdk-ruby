@@ -1,4 +1,4 @@
-require 'mcp-sdk' # Assuming your application is in app.rb
+require 'mcp-sdk'
 
 MCP::Server.configure do
   tool :sup do
@@ -19,6 +19,12 @@ MCP::Server.configure do
       "some document text"
     end
   end
+
+  tools [
+    MCP::Server::Tool.new("my_cool_tool", "the cooliest", {}) do
+      "cool"
+    end
+  ]
 
   # list_tools do
   #   [{"name": "cool_tool"}]

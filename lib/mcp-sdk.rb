@@ -1,4 +1,3 @@
-require 'mcp/mcp'
 require 'mcp/server'
 require 'mcp/server/http'
 require 'mcp/server/request_handler'

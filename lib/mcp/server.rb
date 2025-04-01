@@ -8,8 +8,17 @@ module MCP
         self.instance_eval(&block) if block_given?
       end
 
-      def tools
-        @tools ||= {}
+      def tools(tool_list = nil)
+        if tool_list.nil?
+          @tools ||= {}
+        elsif tool_list.is_a?(Array)
+          @tools ||= {}
+          tool_list.each do |tool|
+            @tools[tool.name] = tool
+          end
+        else
+          raise ArgumentError, "Expected an array of tools"
+        end
       end
 
       def resource_templates
