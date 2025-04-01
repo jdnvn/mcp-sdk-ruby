@@ -2,7 +2,7 @@
 
 require "json"
 
-module Mcp
+module MCP
   module Server
     module Stdio
       class Reader

@@ -1,4 +1,4 @@
-module Mcp
+module MCP
   module Server
     class Tool
       attr_accessor :name, :description, :parameters

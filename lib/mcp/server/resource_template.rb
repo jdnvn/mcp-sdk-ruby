@@ -1,4 +1,4 @@
-module Mcp
+module MCP
   module Server
     class ResourceTemplate
       attr_reader :uri_template, :name, :description, :mime_type, :handler

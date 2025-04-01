@@ -1,6 +1,6 @@
 require 'mcp-sdk' # Assuming your application is in app.rb
 
-Mcp::Server.configure do
+MCP::Server.configure do
   tool :sup do
     parameter :message, type: :string, required: true
     parameter :chill, type: :boolean, description: "Suh dude"
@@ -25,4 +25,4 @@ Mcp::Server.configure do
   # end
 end
 
-run Mcp::Server::Http.new
+run MCP::Server::Http.new

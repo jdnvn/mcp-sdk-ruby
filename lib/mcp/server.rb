@@ -1,4 +1,4 @@
-module Mcp
+module MCP
   module Server
     autoload :Configuration, "mcp/server/configuration"
     autoload :Http, "mcp/server/http"
