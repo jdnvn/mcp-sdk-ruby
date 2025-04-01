@@ -20,7 +20,7 @@ module Mcp
       end
 
       private
-      
+
       def sse(env)
         body = env['rack.input'].read
 
