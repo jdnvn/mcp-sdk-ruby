@@ -12,8 +12,10 @@ module Mcp
         path = req.path_info
 
         case path
-        when "/sse"
+        when "/sse", "/", ""
           sse(env)
+        else
+          [404, {"Content-Type" => "application/json"}, [{"error": "Not Found"}.to_json]]
         end
       end
 
@@ -25,12 +27,12 @@ module Mcp
         begin
           request = JSON.parse body
         rescue JSON::ParserError
-          return [400, {"content-type" => "application/json"}, [{"message": "Bad Request"}.to_json]]
+          return [400, {"Content-Type" => "application/json"}, [{"message": "Bad Request"}.to_json]]
         end
 
         response = @request_handler.handle_request(request)
 
-        [200, { "content-type" => "application/json" }, [response.to_json]]
+        [200, { "Content-Type" => "application/json" }, [response.to_json]]
       end
     end
   end
